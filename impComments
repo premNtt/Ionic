@@ -1,0 +1,26 @@
+ref: ionicframework.com
+************************
+
+$ npm install -g ionic
+
+$ ionic start myapp [template]
+	tabs (Default)
+	sidemenu
+	maps
+	salesforce
+	complex-list
+	blank
+
+$ ionic platform ios android
+
+$ ionic serve [options] 
+
+$ ionic emulate ios [options]
+
+$ ionic run ios [options]
+
+
+http://ionicframework.com/?_ga=1.65079785.614427434.1470740145
+ref: http://appcamp.io/courses/
+http://appcamp.io/courses
+*****************************	
