@@ -30,6 +30,14 @@ angular.module('starter', ['ionic','starter.controllers','starter.services'])
       abstract: true,
        templateUrl: 'templates/menu.html',
     })
+    .state('app.home', {
+      url: '/home',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/home.html'           
+        }
+      }
+    })
     .state('app.login', {
       url: '/login',
       views: {
