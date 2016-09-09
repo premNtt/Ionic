@@ -2,8 +2,8 @@ angular.module('starter')
 
 .controller('DashboardCtrl',function($scope, $state, DashboardServices){
 	$scope.data = null;
-	DashboardServices.getData(function(dataResponse){
-		$scope.data = dataResponse;		
+	DashboardServices.getData().then(function(dataResponse){
+		$scope.data = dataResponse.data;		
 		console.log(JSON.stringify($scope.data));
 	});
 
