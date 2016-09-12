@@ -35,18 +35,22 @@ $stateProvider
     url:'/dashboard',
     views:{
       'menuContent':{
-         templateUrl: 'templates/dashboard.html',
-         controller: 'DashboardCtrl'
-       }
+        templateUrl: 'templates/dashboard.html',
+        controller: 'DashboardCtrl'
+      }
     }   
   })
 
   .state('menu.create',{
     url: '/create',
-    templateUrl: 'templates/create.html'
+    views:{
+      'menuContent':{
+         templateUrl: 'templates/create.html',
+         controller: 'createCtrl'
+      }
+    }  
   })
 
- $urlRouterProvider.otherwise('/menu/dashboard'); 
-
+$urlRouterProvider.otherwise('/menu/dashboard'); 
 
 })

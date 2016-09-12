@@ -1,0 +1,27 @@
+<ion-view view-title="Create" name="dashboard-create">
+ <ion-content class="padding">
+    <div class="row">
+	    <div class="col text-left">
+		<form ng-submit="submit()">
+            <label class="item item-input item-stacked-label">
+            <span class="input-label">First Name</span>
+            <input type="text" name="firstName" placeholder="enter First Name" ng-model="emp.firstname">
+            </label>
+
+            <label class="item item-input item-stacked-label">
+            <span class="input-label">Last Name</span>
+            <input type="text" name="lastname" placeholder="enter Last Name" ng-model="emp.lastname">
+            </label>
+
+            <label class="item item-input item-stacked-label">
+            <span class="input-label">Email</span>
+            <input type="text" name="email" placeholder="enter email" ng-model="emp.email">
+            </label>
+ 
+            <input class="button button-block button-positive" type="submit" name="submit" value="Submit to server">    
+            {{response}}                
+        </form>
+	    </div>
+    </div>
+ </ion-content>
+</ion-view>
