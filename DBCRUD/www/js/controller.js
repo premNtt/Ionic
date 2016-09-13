@@ -2,11 +2,11 @@ angular.module('starter')
 
 .controller('DashboardCtrl',function($scope, $state, DashboardServices){
 	
-	$scope.username = "prem";
+	$scope.username = "prem2";
 	DashboardServices.getData().then(function(dataResponse){
-		$scope.items = dataResponse.data.employees;		
+		$scope.items = dataResponse.data;		
 		console.log(JSON.stringify($scope.items));
-		$scope.username = $scope.items[0].firstName;
+		$scope.username = $scope.items[0].firstname;
 	},function(err){
 		console.log("Error :"+JSON.stringify(err));
 	});
