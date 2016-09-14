@@ -4,7 +4,7 @@ angular.module('starter')
 	$scope.reload = function() {
     	//alert("triggered");
     	//$state.go($state.current, {}, {reload: true});
-    	window.location.reload(true)
+    	window.location.reload(true);
   	};
 })
 
