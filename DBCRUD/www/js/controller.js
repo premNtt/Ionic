@@ -1,8 +1,16 @@
 angular.module('starter')
 
+.controller('MenuCtrl',function($scope, $state,DashboardServices){
+	$scope.reload = function() {
+    	//alert("triggered");
+    	//$state.go($state.current, {}, {reload: true});
+    	window.location.reload(true)
+  	};
+})
+
 .controller('DashboardCtrl',function($scope, $state, DashboardServices){
-	
-	$scope.username = "prem2";
+
+	$scope.username = "Guest";
 	DashboardServices.getData().then(function(dataResponse){
 		$scope.items = dataResponse.data;		
 		console.log(JSON.stringify($scope.items));

@@ -2,14 +2,18 @@
  <ion-content class="padding">
     <div class="row">
 	    <div class="col text-center">
-		    <h3 class="title">Welcome {{username}} !</h3>
-			<ul ng-repeat="item in items"> 
-		        <li ng-repeat="(key, val) in item"> {{key}} : {{val}} </li>
-		    </ul>	
-		    	    
-		    <br><br><br>
-		    {{items}}		    
+		    <h3 class="title">Welcome {{username}} !</h3>				    
 	    </div>
+    </div>
+    <div class="row">
+    	<div class="col">First Name</div>
+    	<div class="col">Last Name</div>
+    	<div class="col">Email</div>
+    </div>
+    <div class="row" ng-repeat="item in items" >
+    	<div class="col">{{item.firstname}}</div>
+    	<div class="col">{{item.lastname}}</div>
+    	<div class="col">{{item.email}}</div>
     </div>
  </ion-content>
 </ion-view>

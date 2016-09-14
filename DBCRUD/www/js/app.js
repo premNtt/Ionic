@@ -27,8 +27,10 @@ angular.module('starter', ['ionic'])
 $stateProvider
 
   .state('menu',{
-    url: '/menu',
-    templateUrl: 'templates/menu.html'
+    url: '/menu',    
+    templateUrl: 'templates/menu.html',
+     controller: 'MenuCtrl'
+
   }) 
 
   .state('menu.dashboard',{
