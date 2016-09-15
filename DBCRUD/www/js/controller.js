@@ -1,15 +1,17 @@
 angular.module('starter')
 
 .controller('MenuCtrl',function($scope, $state,DashboardServices){
+	console.log("MenuCtrl");
 	$scope.reload = function() {
     	//alert("triggered");
     	//$state.go($state.current, {}, {reload: true});
     	window.location.reload(true);
+    	$state.go('menu.dashboard');
   	};
 })
 
 .controller('DashboardCtrl',function($scope, $state, DashboardServices){
-
+	console.log("DashboardCtrl");
 	$scope.username = "Guest";
 	DashboardServices.getData().then(function(dataResponse){
 		$scope.items = dataResponse.data;		
@@ -20,13 +22,13 @@ angular.module('starter')
 	});
 })
 
-.controller('createCtrl', function($scope, $state, $http){
+.controller('createCtrl', function($scope, $state, $http,WEBSERVICES){
+	console.log("createCtrl");
 	$scope.emp = {};
 	$scope.submit = function(){
-		var link = 'http://127.0.0.1:8888/demoServices/postdata.php';
- 		var postdata = {firstname : $scope.emp.firstname,
+		var postdata = {firstname : $scope.emp.firstname,
  						lastname : $scope.emp.lastname};
-        $http.post(link, postdata).then(function (res){
+        $http.post(WEBSERVICES.post, postdata).then(function (res){
             $scope.response = res.data;
         });
 	}

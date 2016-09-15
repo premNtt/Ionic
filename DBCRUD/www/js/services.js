@@ -1,10 +1,10 @@
 angular.module('starter')
 
-.service('DashboardServices',function($q, $http){
+.service('DashboardServices',function($q, $http,WEBSERVICES){
 	this.getData  = function(){
 		return $http({
 			method: 'GET',
-			url: 'http://127.0.0.1:8888/demoServices/index.php'
+			url: WEBSERVICES.get
 		});
 	}
 })
