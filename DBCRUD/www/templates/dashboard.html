@@ -13,11 +13,11 @@
      </div>
 
     <div class="row">
-    	<div class="col">First Name</div>
-    	<div class="col">Last Name</div>
+    	<div class="col" ng-click="sort('firstname')" >First Name</div>
+    	<div class="col" ng-click="sort('lastname')">Last Name</div>
     	<div class="col">Email</div>
     </div>
-    <div class="row" ng-repeat="item in items|filter:search" >
+    <div class="row" ng-repeat="item in items|orderBy:sortKey:reverse|filter:search" >
     	<div class="col">{{item.firstname}}</div>
     	<div class="col">{{item.lastname}}</div>
     	<div class="col">{{item.email}}</div>

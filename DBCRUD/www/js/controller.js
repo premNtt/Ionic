@@ -13,6 +13,13 @@ angular.module('starter')
 .controller('DashboardCtrl',function($scope, $state, DashboardServices){
 	console.log("DashboardCtrl");
 	$scope.username = "Guest";
+
+	$scope.sort = function(keyname){
+		console.log("sort");
+        $scope.sortKey = keyname;   //set the sortKey to the param passed
+        $scope.reverse = !$scope.reverse; //if true make it false and vice versa
+    }
+
 	DashboardServices.getData().then(function(dataResponse){
 		$scope.items = dataResponse.data;		
 		console.log(JSON.stringify($scope.items));
@@ -27,7 +34,8 @@ angular.module('starter')
 	$scope.emp = {};
 	$scope.submit = function(){
 		var postdata = {firstname : $scope.emp.firstname,
- 						lastname : $scope.emp.lastname};
+ 						lastname : $scope.emp.lastname,
+ 						email: $scope.emp.email};
         $http.post(WEBSERVICES.post, postdata).then(function (res){
             $scope.response = res.data;
         });
